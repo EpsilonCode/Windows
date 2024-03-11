@@ -1,0 +1,51 @@
+Security Log Events
+Account Lockouts (Event ID 4740): Indicates a user account was locked out, often due to multiple failed login attempts. Frequent lockouts can suggest brute force attacks.
+
+Privilege Use (Event ID 4672): Occurs when a special logon is used with administrative privileges. Monitoring these can help detect potential unauthorized privilege escalations.
+
+Clearing of Event Logs (Event ID 1102): Indicates the security log was cleared. This can be a sign of an attacker trying to cover their tracks.
+
+Security Log was Shut Down (Event ID 1100): Indicates that the security log has been closed. This could happen as part of normal system shutdown or malicious activity to evade detection.
+
+Audit Log was Cleared (Event ID 1104): Signifies that the audit log was cleared, potentially by an attacker to hide their tracks.
+
+Event Logging Service Shutdown (Event ID 1108): Indicates that the event logging service has been shut down. This could affect monitoring and alerting capabilities.
+
+Explicit Credential Use (Event ID 4648): A logon was attempted using explicit credentials, indicating possible pass-the-hash attacks or other suspicious activity where credentials are used in an unusual manner.
+
+Scheduled Task Created (Event ID 4698): Indicates the creation of a new scheduled task, which attackers often use for persistence.
+
+Scheduled Task Enabled (Event ID 4700): Shows when a scheduled task has been enabled. Monitoring changes to tasks can help detect malicious activity.
+
+Password Change Attempt (Event ID 4723): Indicates an attempt was made to change an account's password. This could be a user changing their password or an attacker attempting to reset a password.
+
+User Account Disabled (Event ID 4725): Indicates a user account was disabled. Disabling accounts, especially administrative ones, could be part of a larger attack.
+
+Group Created (Event ID 4727): Indicates the creation of a new security group, which could be used by an attacker to organize malicious accounts.
+
+Group Membership Changes (Event IDs 4728, 4732): Show additions to security-sensitive groups. Unauthorized changes could indicate compromised accounts.
+
+Group Deleted (Event ID 4731): Indicates a security group was deleted, which could affect security policies or be part of an attack to remove protections.
+
+User Account Changed (Event ID 4738): Indicates changes to a user account's properties. Unauthorized changes may signal an account takeover.
+
+RDP Successful Logon (Event ID 4624 with Logon Type 10): Represents a successful logon through Remote Desktop. It's essential to monitor for unauthorized RDP access.
+
+RDP Failed Logon Attempt (Event ID 4625 with Logon Type 10): Indicates a failed RDP logon attempt, which can suggest brute-force attacks trying to gain access.
+
+System Log Events
+System or Service Failures (Event ID 7022, 7023, 7031, 7034): Indicate service start failures or unexpected terminations, which could affect or stem from RDP services.
+
+Driver Failures (Event ID 219): Driver issues can impact overall system performance, including the functionality of RDP.
+
+Application Log Events
+Application Crashes (Event ID 1000): Useful for diagnosing stability issues that might affect RDP sessions or be caused by applications run within RDP sessions.
+
+Application Hangs (Event ID 1002): Indicates non-responsive applications, relevant for diagnosing issues within RDP sessions.
+
+Other Important Events
+Windows Firewall Changes (Event ID 4950-4958): Changes to firewall settings could affect RDP access, either by unintentionally blocking it or maliciously opening it up.
+
+Task Scheduler (Event ID 106): Scheduled tasks created, modified, or deleted could be related to maintaining persistence after gaining access via RDP.
+
+Windows Defender Activity (Event IDs 1116, 1117): Malware detections and actions, crucial for identifying threats that could be introduced via RDP sessions
